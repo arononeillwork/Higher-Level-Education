@@ -36,6 +36,12 @@ jobs:
             az group create --name ${{ vars.RESOURCE_GROUP_NAME }} --location ${{ vars.RESOURCE_GROUP_LOCATION }}
             echo "Azure resource group created"
 
+      - name: List files for debugging
+        run: ls -R
+
+      - name: List files in infrastructure directory
+        run: ls -la ./infrastructure
+
       - name: Deploy
         uses: azure/arm-deploy@v2
         with:
