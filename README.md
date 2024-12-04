@@ -33,9 +33,10 @@ az deployment group create --resource-group donetrain-urlshortener-dev --templat
 ### Create User for GH Actions
 ```bash
 az ad sp create-for-rbac --name "GitHub-Actions-SP" \
- --role contributor \
- --scopes /subscriptions/178387ed-94be-47b5-8b72-61b2815286bf \
- --sdk-auth
+                         --assignee 167f3283-36c2-4835-8bb7-59a85e6b6b13 \
+                         --role contributor \
+                         --scope /subscriptions/178387ed-94be-47b5-8b72-61b2815286bf \
+                         --sdk-auth
 ````
 
 #### Configure a federated identity credential on an app - App registration -> Crets & secrets -> fed credentials
