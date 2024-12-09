@@ -8,12 +8,17 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HigherLevelEducation.Api", "Api\src\HigherLevelEducation.Api\HigherLevelEducation.Api.csproj", "{2C701E81-27A2-4F1D-AE05-7F458E5C7120}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{5384D065-273F-4547-B7EC-ECC452A87E51}"
+	ProjectSection(SolutionItems) = preProject
+		Api\src\TestList = Api\src\TestList
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{EFF834C6-EA4A-44FC-B742-2C08379FE624}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HigherLevelEducation.Api.Core.Tests", "HigherLevelEducation.Api.Core.Tests\HigherLevelEducation.Api.Core.Tests.csproj", "{7CE43C30-6E01-426B-BDA5-AA3D8FA11B66}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HigherLevelEducation.Core", "Api\src\HigherLevelEducation.Core\HigherLevelEducation.Core.csproj", "{49128E77-AD31-4870-97E2-228CF43DFDDE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HigherLevelEducation.Tests", "HigherLevelEducation.Tests\HigherLevelEducation.Tests.csproj", "{3A24F1FB-33E0-44EE-B2BE-24ED7DC10E14}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,6 +41,10 @@ Global
 		{49128E77-AD31-4870-97E2-228CF43DFDDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{49128E77-AD31-4870-97E2-228CF43DFDDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{49128E77-AD31-4870-97E2-228CF43DFDDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A24F1FB-33E0-44EE-B2BE-24ED7DC10E14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A24F1FB-33E0-44EE-B2BE-24ED7DC10E14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A24F1FB-33E0-44EE-B2BE-24ED7DC10E14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A24F1FB-33E0-44EE-B2BE-24ED7DC10E14}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{5384D065-273F-4547-B7EC-ECC452A87E51} = {98F3CF92-DB88-4580-A709-1FE4BE9A131E}
@@ -43,5 +52,6 @@ Global
 		{EFF834C6-EA4A-44FC-B742-2C08379FE624} = {98F3CF92-DB88-4580-A709-1FE4BE9A131E}
 		{7CE43C30-6E01-426B-BDA5-AA3D8FA11B66} = {EFF834C6-EA4A-44FC-B742-2C08379FE624}
 		{49128E77-AD31-4870-97E2-228CF43DFDDE} = {5384D065-273F-4547-B7EC-ECC452A87E51}
+		{3A24F1FB-33E0-44EE-B2BE-24ED7DC10E14} = {EFF834C6-EA4A-44FC-B742-2C08379FE624}
 	EndGlobalSection
 EndGlobal
