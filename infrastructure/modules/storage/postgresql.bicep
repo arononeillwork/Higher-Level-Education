@@ -15,7 +15,7 @@ resource postgresqlServer 'Microsoft.DBforPostgreSQL/flexibleServers@2023-12-01-
   properties: {
     version: '16'
     storage: {
-      storageSizeGB: 16
+      storageSizeGB: 32
     }
     backup: {
       backupRetentionDays: 7
