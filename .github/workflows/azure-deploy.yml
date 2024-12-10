@@ -44,6 +44,7 @@ jobs:
           scope: resourcegroup
           resourceGroupName: ${{ vars.RESOURCE_GROUP_NAME }}
           template: ./infrastructure/main.bicep
+          parameters: pgSqlPassword=${{ secrets.PGSQL_PASSWORD }}
 
   deploy-prod:
     runs-on: ubuntu-latest
@@ -74,3 +75,4 @@ jobs:
           scope: resourcegroup
           resourceGroupName: ${{ vars.RESOURCE_GROUP_NAME }}
           template: ./infrastructure/main.bicep
+          parameters: pgSqlPassword=${{ secrets.PGSQL_PASSWORD }}

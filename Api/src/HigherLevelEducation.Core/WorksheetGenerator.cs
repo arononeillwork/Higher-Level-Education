@@ -22,7 +22,7 @@ public class WorksheetGenerator
             Subject.Maths, 
             criteria.Topic, 
             criteria.DifficultyLevel, 
-            10));
+            criteria.NumberOfQuestions));
 
         var worksheet = new Worksheet(criteria)
         {

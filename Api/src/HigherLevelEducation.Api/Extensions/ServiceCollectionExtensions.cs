@@ -15,7 +15,6 @@ public static class ServiceCollectionExtensions
             var criteria = new WorksheetCriteria(
                 ClassLevel: 4,
                 Topic: Topic.Addition,
-                NumberOfQuestions: 5,
                 DifficultyLevel: DifficultyLevel.Medium);
             worksheetProvider.AssignCriteria(criteria);
             return worksheetProvider;

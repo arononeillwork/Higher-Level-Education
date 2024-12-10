@@ -21,7 +21,7 @@ public class QuestionsTests
     public void Should_Return_Questions_Grouped_By_Difficulty_Ordered_Easiest_First(
         Topic topic,
         DifficultyLevel difficulty,
-        int limit)
+        int numberOfQuestions)
     {
         // Arrange - Request Questions
         var parameters = new QuestionsApi.CreateQuestionsModel(
@@ -29,7 +29,7 @@ public class QuestionsTests
             Subject.Maths,
             topic,
             difficulty,
-            limit
+            numberOfQuestions
         );
 
         // Act
@@ -37,8 +37,8 @@ public class QuestionsTests
 
         // Assert
 
-        // Check if limit applied
-        result.Count.Should().Be(parameters.Limit);
+        // Check if numberOfQuestions applied
+        result.Count.Should().Be(parameters.NumberOfQuestions);
 
         // Check if each string contains the calculation sign
         var calculationSign = QuestionsApi.GetCalculationSign(parameters.Topic);

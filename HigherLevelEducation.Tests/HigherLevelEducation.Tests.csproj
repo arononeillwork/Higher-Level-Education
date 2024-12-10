@@ -21,6 +21,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\Api\src\HigherLevelEducation.Api\HigherLevelEducation.Api.csproj" />
       <ProjectReference Include="..\Api\src\HigherLevelEducation.Core\HigherLevelEducation.Core.csproj" />
     </ItemGroup>
 

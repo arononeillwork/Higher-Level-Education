@@ -1,4 +1,4 @@
-﻿namespace HigherLevelEducation.Tests;
+﻿namespace HigherLevelEducation.Api;
 
 public interface IApiAssemblyMarker
 {

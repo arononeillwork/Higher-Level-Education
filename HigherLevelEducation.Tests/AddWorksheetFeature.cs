@@ -6,18 +6,24 @@ using HigherLevelEducation.Core.Models;
 
 namespace HigherLevelEducation.Tests;
 
-public class AddWorksheetFeature(ApiFixture fixture) : IClassFixture<ApiFixture>
+public class AddWorksheetFeature : IClassFixture<ApiFixture>
 {
-    private const int ClassLevel = 4;
-    private const int NumberOfQuestions = 8;
+    private readonly HttpClient _client;
     
-    private readonly HttpClient _client = fixture.CreateClient();
+    private const int ClassLevel = 4;
+    private const int NumberOfQuestions = 10;
+    
     private readonly WorksheetCriteria _criteria = new(
         ClassLevel: ClassLevel,
         Topic: Topic.Addition,
         NumberOfQuestions: NumberOfQuestions,
         DifficultyLevel: DifficultyLevel.Medium);
-
+    
+    public AddWorksheetFeature(ApiFixture fixture)
+    {
+        _client = fixture.CreateClient();
+    }
+    
     [Fact]
     public async Task Given_worksheet_should_return_ok()
     {

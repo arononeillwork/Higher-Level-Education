@@ -2,7 +2,7 @@
 {
     public abstract class QuestionsApi
     {
-        public record CreateQuestionsModel(int ClassLevel, Subject Subject, Topic Topic, DifficultyLevel Difficulty, int Limit);
+        public record CreateQuestionsModel(int ClassLevel, Subject Subject, Topic Topic, DifficultyLevel Difficulty, int? NumberOfQuestions = 10);
 
         private static readonly Random RandomInstance = new Random();
 
@@ -12,7 +12,7 @@
             var calculationSign = GetCalculationSign(model.Topic);
             var numberCriteria = GetNumberCriteriaBasedOnTopic(model.ClassLevel, model.Topic);
 
-            for (var i = 0; i < model.Limit; i++)
+            for (var i = 0; i < model.NumberOfQuestions; i++)
             {
                 var question = GenerateQuestion(numberCriteria, model.Difficulty, calculationSign);
                 questions.Add(question);
