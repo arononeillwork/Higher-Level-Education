@@ -8,10 +8,11 @@ public class ApiFixture : WebApplicationFactory<IApiAssemblyMarker>
 {
     protected override void ConfigureWebHost(IWebHostBuilder builder)
     {
+        var test = Directory.GetCurrentDirectory();
         var contentRoot = Path.GetFullPath(Path.Combine(
             Directory.GetCurrentDirectory(),
-            "..", "..", "..", "..", // Go back three directories
-            "Api", "src", "HigherLevelEducation.Api" // Navigate into the target folder
+            "..", "..", "..", "..", "..", // Go back three directories
+            "src", "HigherLevelEducation.Api" // Navigate into the target folder
         ));
         
         builder
