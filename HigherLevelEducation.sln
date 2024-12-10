@@ -14,11 +14,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{5384D065-273
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{EFF834C6-EA4A-44FC-B742-2C08379FE624}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HigherLevelEducation.Api.Core.Tests", "HigherLevelEducation.Api.Core.Tests\HigherLevelEducation.Api.Core.Tests.csproj", "{7CE43C30-6E01-426B-BDA5-AA3D8FA11B66}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HigherLevelEducation.Api.Core.Tests", "Api\tests\HigherLevelEducation.Api.Core.Tests\HigherLevelEducation.Api.Core.Tests.csproj", "{7CE43C30-6E01-426B-BDA5-AA3D8FA11B66}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HigherLevelEducation.Core", "Api\src\HigherLevelEducation.Core\HigherLevelEducation.Core.csproj", "{49128E77-AD31-4870-97E2-228CF43DFDDE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HigherLevelEducation.Tests", "HigherLevelEducation.Tests\HigherLevelEducation.Tests.csproj", "{3A24F1FB-33E0-44EE-B2BE-24ED7DC10E14}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HigherLevelEducation.Tests", "Api\tests\HigherLevelEducation.Tests\HigherLevelEducation.Tests.csproj", "{3A24F1FB-33E0-44EE-B2BE-24ED7DC10E14}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
