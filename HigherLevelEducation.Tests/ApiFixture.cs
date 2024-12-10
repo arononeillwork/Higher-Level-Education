@@ -10,8 +10,14 @@ public class ApiFixture : WebApplicationFactory<IApiAssemblyMarker>
 {
     protected override void ConfigureWebHost(IWebHostBuilder builder)
     {
+        var contentRoot = Path.GetFullPath(Path.Combine(
+            Directory.GetCurrentDirectory(),
+            "..", "..", "..", "..", // Go back three directories
+            "Api", "src", "HigherLevelEducation.Api" // Navigate into the target folder
+        ));
+        
         builder
-            .UseContentRoot(@"C:\Users\Aron O'Neill\Documents\EducationApp\Rough\Dometrain\Higher-Level-Education\Api\src\HigherLevelEducation.Api")
+            .UseContentRoot(contentRoot)
             .UseEnvironment("Development");
     }
 }
