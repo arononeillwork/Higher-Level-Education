@@ -58,6 +58,5 @@ https://learn.microsoft.com/en-gb/entra/workload-id/workload-identity-federation
 
 ```bash
 az webapp deployment list-publishing-profiles --name api-sl5amqk4u4mko --resource-group
-higherLevelEducation-dev \
-    --xml
+higherLevelEducation-dev --xml
 ```
