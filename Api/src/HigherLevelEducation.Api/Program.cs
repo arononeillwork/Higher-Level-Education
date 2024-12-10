@@ -1,5 +1,9 @@
 using Azure.Identity;
 
+using HigherLevelEducation.Api.Extensions;
+using HigherLevelEducation.Core.Models;
+using HigherLevelEducation.Core.Worksheets;
+
 var builder = WebApplication.CreateBuilder(args);
 
 var keyVaultName = builder.Configuration["KeyVaultName"];
@@ -12,7 +16,10 @@ if (!string.IsNullOrEmpty(keyVaultName))
 
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddOpenApi();
+// builder.Services.AddOpenApi();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSingleton(TimeProvider.System);
+builder.Services.AddWorksheetFeature();
 
 var app = builder.Build();
 
@@ -24,28 +31,20 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-var summaries = new[]
-{
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
+app.MapPost(pattern: "/api/worksheets",
+    async (AddWorksheetHandler handler, AddWorksheetRequest request, CancellationToken cancellationToken) =>
+    {
+        var result = await handler.HandleAsync(request, cancellationToken);
 
-app.MapGet("/weatherforecast", () =>
-{
-    var forecast =  Enumerable.Range(1, 5).Select(index =>
-        new WeatherForecast
-        (
-            DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-            Random.Shared.Next(-20, 55),
-            summaries[Random.Shared.Next(summaries.Length)]
-        ))
-        .ToArray();
-    return forecast;
-})
-.WithName("GetWeatherForecast");
+        if (!result.Succeeded)
+        {
+            return Results.BadRequest(result.Error);
+        }
+
+        return Results.Created(
+            uri: $"/api/worksheets/{result.Value!.Id}",
+            value: result.Value
+        );
+    });
 
 app.Run();
-
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}
