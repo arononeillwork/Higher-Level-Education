@@ -30,7 +30,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+app.MapGet("/", () => "API");
 app.MapPost(pattern: "/api/worksheets",
     async (AddWorksheetHandler handler, AddWorksheetRequest request, CancellationToken cancellationToken) =>
     {

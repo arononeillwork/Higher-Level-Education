@@ -1,0 +1,6 @@
+@HigherLevelEducation.Services_HostAddress = http://localhost:5150
+
+GET {{HigherLevelEducation.Services_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
