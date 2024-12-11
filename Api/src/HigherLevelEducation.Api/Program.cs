@@ -23,6 +23,10 @@ builder.Services.AddWorksheetFeature();
 
 var app = builder.Build();
 
+// Configure the application to listen on a port specified by the environment variable
+var port = Environment.GetEnvironmentVariable("PORT") ?? "5000";
+app.Urls.Add($"http://*:{port}");
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {

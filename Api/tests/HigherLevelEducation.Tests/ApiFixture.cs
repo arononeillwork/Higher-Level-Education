@@ -15,8 +15,12 @@ public class ApiFixture : WebApplicationFactory<IApiAssemblyMarker>
             "src", "HigherLevelEducation.Api" // Navigate into the target folder
         ));
         
+        // Dynamically bind to a port in tests
+        var port = Environment.GetEnvironmentVariable("PORT") ?? "5000";
+        
         builder
             .UseContentRoot(contentRoot)
-            .UseEnvironment("Development");
+            .UseEnvironment("Development")
+            .UseUrls($"http://*:{port}"); // Bind to the dynamic port
     }
 }
